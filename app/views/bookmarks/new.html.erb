@@ -1,0 +1,9 @@
+<h1>New Bookmarks View - create movie</h1>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie, collection: Movie.all %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "Cancel", list_path(@list) %>

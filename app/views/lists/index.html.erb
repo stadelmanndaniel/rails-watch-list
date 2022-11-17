@@ -1,0 +1,18 @@
+<h1>List overview</h1>
+
+<div class="container">
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col">
+        <div class="card">
+          <img src="https://source.unsplash.com/random" class="card-img" alt="list">
+          <div class="card-img-overlay">
+            <p><%= link_to list.name, list_path(list), class: "card-title text-decoration-none fs-3 text-center fw-normal" %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "Create a new list", new_list_path, class: "btn btn-success rounded-pill" %>
